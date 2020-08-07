@@ -21,12 +21,12 @@ import numpy as np
 plt.style.use('seaborn')
 cmap = 'tab10'
 
-#Read-in data
-X = pd.read_csv('data/X_df.csv')
-actual_centroids = pd.read_csv('data/y_df.csv')
-
 from test_scripts.test_class import Test
 test = Test()
+
+# Read in data
+X = test.load_ind('X.pkl')
+y = test.load_ind('y.pkl')
 ```
 
 ### Create an Elbow Curve plot
@@ -121,4 +121,21 @@ def silhouette_plot(n_clusters, cluster_labels, X):
 
 ```python
 # Your work here
+```
+
+### Optional
+
+The data was artificially generated, so the "actual" centroids
+are known.
+
+A variable `y` has been loaded and contains the "actual" centroids.  
+
+Compare your computed centroids against the actual ones.
+
+Can you manipulate the X data in such a way to generate closer
+centroids with KMeans?
+
+
+```python
+
 ```
